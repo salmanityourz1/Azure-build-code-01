@@ -1,0 +1,11 @@
+Configuration directory
+
+main.tf
+providers.tf
+variables.tf
+output.tf
+
+---
+
+Why variable ---Repeated static value handle
+	     ---Replace the hardcode value
