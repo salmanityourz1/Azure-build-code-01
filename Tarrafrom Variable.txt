@@ -1,0 +1,48 @@
+Terrafrom
+
+Variables Input , Output,local
+Providers
+Resource
+Datasource
+
+#
+//
+
+/*
+*/
+
+:-------syntax:-----
+
+variable"your variable_name"{
+description =" "----->Meaning full description
+type = " "------>Ex-string, number,bool,list,set,map
+default =" "------> ariable default value
+}
+
+
+Types of terraform variable -String , number,bool,list,map..etc
+1)Input Variable
+variable 
+(prop,,attributes)
+Type=string
+Description=name of the resource group
+default = Demo-99 
+sensitive = true or fales 
+
+
+
+
+2)Output variable
+
+output of terraform execution
+
+output"rg-name"{
+value= var.resource_group_name
+}
+
+3)Loal:-
+
+locals{
+rg_name=format("rg-%s, var.resource_group_name)
+}
+
