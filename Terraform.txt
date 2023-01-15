@@ -5,7 +5,77 @@ providers.tf
 variables.tf
 output.tf
 
----
-
+#Code detail has been added
 Why variable ---Repeated static value handle
 	     ---Replace the hardcode value
+	     
+	     terraform{
+    required_providers{
+        azurerm={
+            source = "hashicorp/azurerm"
+            version = "3.0.0"
+        }
+    }
+}
+
+provider "azurerm"{
+    features{}
+}
+
+#Environment Variable creation 
+
+#1Variable for Resource Group
+
+variable "resource_group_name" {
+    type = string
+    description = "This is the resource group name"
+   default =   "rg1"
+   sensitive = true
+}
+
+#2Variable for Location
+
+variable "location" {
+    type = string
+    description = " This is the location vm creation"
+   default =   "Westus"
+   sensitive = true
+}
+
+
+#3Variable for Storage account 
+
+variable "storage_account" {
+    type = string
+    description = "This is the storage account"
+   default =   "azstroage"
+   sensitive = true
+}
+
+#4Variable for container 
+
+variable "Container" {
+    type = string
+    description = " This is the Container account"
+   default =   "stgcontainer"
+   sensitive = true
+   
+}
+
+#Locals variables creation
+locals {
+  resource_group_name  = "rg1"
+  location = "Westus"
+  storage_account = "azstroage"
+  Container = "stgcontainer"
+}
+
+locals {
+
+  tags = {
+    environment = "prod"
+    owner = "onecloud"
+    mail = "salman_l@comcast.com"
+   } 
+}
+
